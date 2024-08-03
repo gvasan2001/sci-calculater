@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>smart garbage maintanance</title>
+    <link rel="stylesheet" href="../static/style1.css">
+</head>
+<body>
+      <nav class="nav-bar">
+        <div class="logo">
+            <h1>Smart garbage maintenance</h1>
+        </div>
+        <div class="nav-list">
+          <ul>
+              <li><a href="/admin_home">Home</a></li>
+              <li><a href="/admin_add_team">add team</a></li>
+              <li><a href="/admin_view_employee">view employee</a></li>
+              <li><a href="/admin_view_user">view user</a></li>
+              <li><a href="/admin_view_report"> view report</a></li>
+              <li><a href="/admin_view_feedback">view feed back</a></li>
+              <li><a href="/log_out">logout</a></li>
+          </ul>
+        </div>
+      </nav>
+<div class="div-table">
+  <div class="background">
+    <h1>USER EMPLOYEE</h1>
+    <table class="main-tabale">
+      <tr id="myTable">
+        <th>id</th>
+        <th>name</th>
+        <th>number</th>
+        <th>mail id</th>
+        <th>gender</th>
+        <th>address</th>
+      </tr>
+      {% for i in items %}
+      <tr>
+        <td>{{ loop.index }}</td>
+        <td>{{i[0]}}</td>
+        <td>{{i[1]}}</td>
+        <td>{{i[2]}}</td>
+        <td>{{i[3]}}</td>
+        <td>{{i[4]}}</td>
+      </tr>
+      {% endfor %}
+      </table>
+  </div>
+</div>
+</body>
+</html>

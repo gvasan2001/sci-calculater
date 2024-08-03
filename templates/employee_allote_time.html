@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>smart garbage maintanance</title>
+    <link rel="stylesheet" href="../static/style1.css">
+</head>
+<body>
+      <nav class="nav-bar">
+        <div class="logo">
+            <h1>Smart garbage maintenance</h1>
+        </div>
+        <div class="nav-list">
+          <ul>
+              <li><a href="/employee_home">Home</a></li>
+              <li><a href="/employee_view_user">view user</a></li>
+              <li><a href="/employee_allote_time">allate time</a></li>
+              <li><a href="/employee_report">report</a></li>
+              <li><a href="/log_out">logout</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="div-table">
+      <div class="time-allot background">
+        <h1>time allate</h1>
+        <form action="/time_allort" method="post">
+          <div class="time-input">
+            <input type="time" class="time-box" name="start">
+          </div>
+          <div class="time-input">
+            <input type="time" class="time-box" name="end">
+          </div>
+          
+          <input type="submit"  class="link" value="Time allote">
+      </form>
+      </div>
+
+      
+        <div class="background">
+          <h1>user request</h1>
+          <table class="main-tabale">
+         <tr class="myTable">
+        <th>id</th>
+        <th>name</th>
+        <th>number</th>
+        <th>mail id</th>
+        <th>gender</th>
+        <th>address</th>
+             <th>address</th>
+      </tr>
+      {% for i in items %}
+      <tr>
+        <td>{{ loop.index }}</td>
+        <td>{{i[0]}}</td>
+        <td>{{i[1]}}</td>
+        <td>{{i[2]}}</td>
+        <td>{{i[3]}}</td>
+        <td>{{i[4]}}</td>
+           <td><a href="/update_time/{{i[0]}}" class="link">update</a></td>
+      </tr>
+      {% endfor %}
+      </table>
+        </div>
+      </div>
+</body>
+</html>

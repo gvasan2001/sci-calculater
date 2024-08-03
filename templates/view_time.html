@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>smart garbage maintanance</title>
+    <link rel="stylesheet" href="../static/style1.css">
+
+</head>
+<body>
+      <nav class="nav-bar">
+        <div class="logo">
+            <h1>Smart garbage maintenance</h1>
+        </div>
+        <div class="nav-list">
+          <ul>
+               <li><a href="/user_home">Home</a></li>
+              <li><a href="/view_time">view time</a></li>
+              <li><a href="/give_feedback">give feedback</a></li>
+              <li><a href="/log_out">logout</a></li>
+          </ul>
+        </div>
+      </nav>
+     <div class="center">
+      
+      <div class="time-display">
+        <h1>time display </h1>
+        {% for i in items%}
+        <h2>{{i[10]}}</h2>
+        <h2>{{i[11]}}</h2>
+      </div>
+      <div class="request">
+        <h1>send request</h1>
+            {% if i[12] == 1 %}
+            <p class="process-p">you request is process</p>
+            {% else %}
+            <a href="/make_request/{{i[0]}}" class="status-other">Yes</a>
+           {% endif %}
+        {% endfor%}
+      </div>
+     </div>
+</body>
+</html>
